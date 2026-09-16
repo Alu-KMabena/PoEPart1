@@ -17,7 +17,7 @@ public class Login {
             && this.password.equals(password);
     }
 
-        public String returnLoginStatus(boolean loginSuccess) {
+    public String returnLoginStatus(boolean loginSuccess) {
         if (loginSuccess) {
             return "Welcome " + firstName + "," + lastName
                  + " it is great to see you.";
@@ -32,5 +32,9 @@ public class Login {
         this.lastName = lastName;
         this.username = username;
         this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
     }
 }
