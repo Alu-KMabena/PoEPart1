@@ -70,6 +70,7 @@ public class PoePart1 {
             System.out.println("Too many failed attempts. Exiting.");
         }
 
+        System.out.println("\n=== Session complete ===");
         scanner.close();
     }
 }
