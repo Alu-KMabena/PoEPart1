@@ -38,13 +38,6 @@ public class PoePart1 {
             return;
         }
 
-        System.out.println("\n=== Login ===");
-        System.out.print("Enter username: ");
-        String loginUser = scanner.nextLine();
-
-        System.out.print("Enter password: ");
-        String loginPass = scanner.nextLine();
-
         Login login = new Login();
         login.setCredentials(
                 registration.getFirstName(),
@@ -52,8 +45,30 @@ public class PoePart1 {
                 registration.getUsername(),
                 registration.getPassword());
 
-        boolean success = login.loginUser(loginUser, loginPass);
-        System.out.println(login.returnLoginStatus(success));
+        System.out.println("\n=== Login ===");
+        int attempts = 0;
+        boolean success = false;
+
+        while (attempts < 3 && !success) {
+            System.out.print("Enter username: ");
+            String loginUser = scanner.nextLine();
+            System.out.print("Enter password: ");
+            String loginPass = scanner.nextLine();
+
+            success = login.loginUser(loginUser, loginPass);
+            System.out.println(login.returnLoginStatus(success));
+
+            if (!success) {
+                attempts++;
+                if (attempts < 3) {
+                    System.out.println("Try again. Attempts remaining: " + (3 - attempts));
+                }
+            }
+        }
+
+        if (!success) {
+            System.out.println("Too many failed attempts. Exiting.");
+        }
 
         scanner.close();
     }
