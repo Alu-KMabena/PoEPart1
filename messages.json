@@ -1,0 +1,16 @@
+[
+  {
+    "messageID": "3546352336",
+    "messageNumber": 0,
+    "recipient": "+27718693002",
+    "messageText": "Test",
+    "messageHash": "00:0:TESTTEST"
+  },
+  {
+    "messageID": "4269668558",
+    "messageNumber": 0,
+    "recipient": "+27718693002",
+    "messageText": "Test",
+    "messageHash": "00:0:TESTTEST"
+  }
+]
